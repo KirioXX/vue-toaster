@@ -1,17 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <toast-provider :timeout="timeout">
+    <div id="app">
+      <img alt="Vue logo" src="./assets/logo.png">
+      <HelloWorld msg="Welcome to Your Vue.js App"/>
+    </div>
+  </toast-provider>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import ToastProvider from './context/ToastProvider'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    ToastProvider,
+  },
+  data() {
+    return {
+      timeout: 5000
+    }
   }
 }
 </script>

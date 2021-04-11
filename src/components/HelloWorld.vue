@@ -27,14 +27,24 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <input v-model="message" placeholder="edit me"/>
+    <button @click="addToast(message || 'Hello World!')">Press Me</button>
   </div>
 </template>
 
 <script>
+import ToastMixin from '../mixins/ToastMixin';
+
 export default {
   name: 'HelloWorld',
+  mixins: [ToastMixin],
   props: {
     msg: String
+  },
+  data() {
+    return {
+      message: ''
+    }
   }
 }
 </script>

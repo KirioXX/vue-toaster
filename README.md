@@ -1,4 +1,4 @@
-# vue-box
+# vue-toaster
 
 ## Project setup
 ```
